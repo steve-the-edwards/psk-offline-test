@@ -216,7 +216,7 @@ gulp.task('clean', function() {
 // Watch files for changes & reload
 gulp.task('serve', ['styles'], function() {
   browserSync({
-    port: 5000,
+    port: 5002,
     notify: false,
     logPrefix: 'PSK',
     snippetOptions: {
@@ -272,7 +272,7 @@ gulp.task('default', ['clean'], function(cb) {
   runSequence(
     ['ensureFiles', 'copy', 'styles'],
     ['images', 'fonts', 'html'],
-    'vulcanize', // 'cache-config',
+    'vulcanize', 'cache-config',
     cb);
 });
 
